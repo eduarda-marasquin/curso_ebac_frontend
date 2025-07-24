@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+.titulo{
+    display: flex;
+    align-items: center;
+}
+
+.titulo h1{
+    padding-left: 30px;
+}
+
+header {
+    padding: 16px 0 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 56px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #62626b;
+}
+
+#logo{
+    width:80px;
+}
+
+form {
+    display: flex;
+    gap: 8px;
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+form input {
+    flex-grow: 1;
+}
+
+
+.menu{
+    padding-left: 100px;
+}
+
+.menu > li {
+    float: left;
+    list-style: none;
+    padding: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+
+.submenu{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 10;
+    padding: 8px 0;
+}
+
+.submenu li {
+    list-style: none;
+    
+}
+
+.submenu li a {
+    display: block;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: #333;
+}
+
+.submenu li a:last-child {
+    border-bottom: none;
+}
+
+.clear {
+    clear: both;
+}
+
+main section {
+    margin-bottom: 64px;
+}
+
+section h2 {
+    margin-bottom: 32px;
+    font-size: 1.8em;
+    color: #403f64;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.destaque .sobre a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: inherit;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.destaque .sobre h3{
+    padding: 30px;
+}
+
+
+.destaque .sobre img {
+    max-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.lancamentos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.lancamento {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.lancamento:hover {
+    transform: scale(1.02);
+}
+
+.lancamento img {
+    max-width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.lancamento h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.lancamento p{
+    color: #ccc;
+}
+
+.lancamento .preco {
+    font-size: 20px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+
+
+footer {
+    background-color: #62626b;
+    color: white;
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 64px;
+}
+
+.botao-menu {
+    display: none;
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .destaque .sobre a {
+        display: block;
+    }
+
+    .destaque .sobre img {
+        margin-bottom: 16px;
+        max-width: 100%;
+    }
+
+    .lancamentos {
+        display: block;
+    }
+
+    .lancamentos .lancamento {
+        margin-bottom: 32px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .botao-menu {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        padding-bottom: 16px;
+    }
+
+
+    .submenu {
+        position: relative;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .menu > li {
+        float: none;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .lancamentos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
