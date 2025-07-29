@@ -1,0 +1,20 @@
+body{
+    background-color: #fff;
+}
+
+.formulario{
+    width: 500px;
+    padding: 30px;
+    position: relative;
+    left: 400px;
+    top: 100px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    background-color: #fdfcfc;
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
