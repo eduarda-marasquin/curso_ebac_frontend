@@ -1,0 +1,133 @@
+@import "colors";
+
+//Escapings
+@tabletBreakpoint:~"(max-width: 1023px)";
+@mobileBreakpoint:~"(max-width: 767px)";
+
+//Mixin
+.mixinProducts(@display, @marginTop){
+    display: @display;
+    margin-top: @marginTop;
+}
+
+//Maps
+
+@buttonMap: {
+    radius: 8px;
+    padding: 8px 0;
+    textAlign: center;
+};
+
+@headerMap: {
+    display: flex;
+    justify: space-between;
+    align: center;
+};
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: @body-color;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: @header-color;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    & .container{
+        display: @headerMap[display];
+        justify-content: @headerMap[justify];
+        align-items: @headerMap[align];
+        padding: 16px 0;
+    }
+}
+
+
+.menu {
+    display: flex;
+
+    & li{
+        font-weight: bold;
+        margin-left: 24px;
+
+        & a {
+            color: @text-color;
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+section {
+    padding: 56px 0;
+}
+
+.products {
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    width: 100%;
+    .mixinProducts(grid, 40px);
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.product-button {
+    background-color: @btn-color;
+    color: @text-color;
+    text-align: @buttonMap[textAlign];
+    padding: @buttonMap[padding];
+    border-radius: @buttonMap[radius];
+    text-decoration: none;
+
+    .mixinProducts(block, 8px);
+
+    &:hover{
+        background-color: @btn-hover;
+    }
+}
+
+
+@media@tabletBreakpoint{
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media@mobileBreakpoint{
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
+    }
+}
